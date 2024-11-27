@@ -6,6 +6,10 @@ It also includes a project that holds the Windows Form Controls for visualizatio
 ## Project
 This Visual Studio 2022 project uses .Net 4.8.
 
+The project may require the following NuGet package installations:
+ * Microsoft.Build by Microsoft 17.8.3
+ * WebSocketSharp.Standard by web-sharp-standard 1.0.3
+
 ## Application 
 The MainForm in the application includes:
  * Connecting to an IP address with HMI port using a designated username and password
@@ -20,7 +24,9 @@ This project provides the core classes to establish a CogSocket connection to th
 
 Includes:
 * CvsInSight.cs class and the supporting SimpleCogSocket classes
-* * test
+  * Added GetCellValueByLocation(string cellLocation)
+  * Added GetCellValueByName(string cellName)
+  * Added SendNMC(string nmc, double timeout, int port, string ipAddress, string username, string password)
 
 ## Cognex.InSight.Web.Controls Project
 This project provides the controls and dependencies that rely on Windows Forms.
