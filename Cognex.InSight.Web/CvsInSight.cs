@@ -1502,11 +1502,11 @@ namespace Cognex.InSight.Web
             string locationToFind = cellName;
             JToken cells = parsedJson["cells"];
             string result = "";
-            Console.WriteLine(parsedJson.ToString());
-            Console.WriteLine("---------");
-            Console.WriteLine(cells.ToString());
-            Console.Write("-----------");
-            Console.WriteLine(_results.ToString());
+            //Console.WriteLine(parsedJson.ToString());
+            //Console.WriteLine("---------");
+            //Console.WriteLine(cells.ToString());
+            //Console.Write("-----------");
+            //Console.WriteLine(_results.ToString());
 
             foreach (var cell in cells)
             {
