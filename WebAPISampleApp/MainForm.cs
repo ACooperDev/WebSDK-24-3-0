@@ -7,6 +7,10 @@
 // conjunction with a Cognex Machine Vision System.  Furthermore you acknowledge
 // and agree that Cognex has no warranty, obligations or liability for your use
 // of the Software.
+//
+// NuGet packages may need to be added:
+//  -Microsoft.Build by Microsoft 17.8.3
+//  -WebSocketSharp.Standard by web-sharp-standard 1.0.3
 //*******************************************************************************
 
 using System;
