@@ -4,7 +4,7 @@ It includes a project to build a base assembly for accessing the Web API, Cognex
 It also includes a project that holds the Windows Form Controls for visualization, Cognex.InSight.Web.Controls.
 
 ## Project
-This Visual Studio 2019 project uses .Net 4.8.
+This Visual Studio 2022 project uses .Net 4.8.
 
 ## Application 
 The MainForm in the application includes:
@@ -20,6 +20,7 @@ This project provides the core classes to establish a CogSocket connection to th
 
 Includes:
 * CvsInSight.cs class and the supporting SimpleCogSocket classes
+* * test
 
 ## Cognex.InSight.Web.Controls Project
 This project provides the controls and dependencies that rely on Windows Forms.
