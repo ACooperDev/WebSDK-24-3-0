@@ -75,11 +75,11 @@ namespace WebAPISampleApp
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.cvsFilmstrip = new Cognex.InSight.Web.Controls.CvsFilmstrip();
             this.cvsCustomView = new Cognex.InSight.Web.Controls.CvsCustomView();
             this.cvsDisplay = new Cognex.InSight.Web.Controls.CvsDisplay();
             this.cvsSpreadsheet = new Cognex.InSight.Web.Controls.CvsSpreadsheet();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -172,6 +172,7 @@ namespace WebAPISampleApp
             this.lblState.TabIndex = 11;
             this.lblState.Text = "Not Connected";
             this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblState.Click += new System.EventHandler(this.lblState_Click);
             // 
             // tbMessages
             // 
@@ -411,6 +412,15 @@ namespace WebAPISampleApp
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 26;
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(1068, 609);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.TabIndex = 27;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // cvsFilmstrip
             // 
             this.cvsFilmstrip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -460,17 +470,8 @@ namespace WebAPISampleApp
             this.cvsSpreadsheet.Location = new System.Drawing.Point(0, 0);
             this.cvsSpreadsheet.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cvsSpreadsheet.Name = "cvsSpreadsheet";
-            this.cvsSpreadsheet.Size = new System.Drawing.Size(412, 545);
+            this.cvsSpreadsheet.Size = new System.Drawing.Size(414, 545);
             this.cvsSpreadsheet.TabIndex = 18;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1068, 609);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 27;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // MainForm
             // 

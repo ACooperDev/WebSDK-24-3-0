@@ -1473,7 +1473,7 @@ namespace Cognex.InSight.Web
       }
     }
 
-        // 6/2024 - Alex Cooper
+        //6/2024 - Alex Cooper
         //Example: _inSight.GetCellValueByLocation("A4")
         public string GetCellValueByLocation(string cellLocation)
         {
@@ -1493,7 +1493,7 @@ namespace Cognex.InSight.Web
             return result;
         }
 
-        // 6/2024 - Alex Cooper
+        //6/2024 - Alex Cooper
         //Example:  _inSight.GetCellValueByName("Cell_A5")
         public string GetCellValueByName(string cellName)
         {
@@ -1519,7 +1519,7 @@ namespace Cognex.InSight.Web
             return result;
         }
 
-        // 6/2024 - Alex Cooper
+        //6/2024 - Alex Cooper
         //Example:  _inSight.SendNMC("GI", 100,23,_inSight.RemoteIPAddress,_inSight.Username, _inSight.Password);
         public string SendNMC(string nmc, double timeout, int port, string ipAddress, string username, string password)
         {

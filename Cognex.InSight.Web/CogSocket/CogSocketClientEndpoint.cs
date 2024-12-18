@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WebSocketSharp;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 namespace Cognex.SimpleCogSocket
 {
@@ -325,17 +326,42 @@ namespace Cognex.SimpleCogSocket
             return tcs.Task; // Warning: _connectTask may be null by now if socket has already connected
         }
 
+        /*
         public void Send(CogSocketMessage message)
         {
             string json = JsonConvert.SerializeObject(message, __messageSerializerSettings);
             OnPreviewMessage(MessagePayloadPreviewEventArgs.Outgoing(json));
-
+             
             lock (_websocket)
             {
                 _websocket.Send(json);
             }
         }
+        */
 
+        //Alex Cooper 12/18/2024
+        public void Send(CogSocketMessage message)
+        {
+            string json = JsonConvert.SerializeObject(message, __messageSerializerSettings);
+            OnPreviewMessage(MessagePayloadPreviewEventArgs.Outgoing(json));
+
+            try
+            {
+                //Can overload TryEnter() with a timout in ms if needed.
+                if(Monitor.TryEnter(_websocket))
+                {
+                    _websocket.Send(json);
+                }
+            }catch (Exception ex)
+            {
+
+            }
+            finally { 
+                Monitor.Exit(_websocket);
+            }
+        }
+
+        /*
         public void Close()
         {
             lock (_websocket)
@@ -346,6 +372,32 @@ namespace Cognex.SimpleCogSocket
                 }
             }
         }
+        */
+
+        //Alex Cooper 12/18/2024
+        public void Close()
+        {
+            try
+            {
+                //Can overload TryEnter() with a timout in ms if needed.
+                if (Monitor.TryEnter(_websocket))
+                {
+                    if(_websocket.ReadyState != WebSocketState.Closed)
+                    {
+                        _websocket.Close();
+                    }
+                }
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                Monitor.Exit(_websocket);
+            }
+        }
+
 
         /// <summary> Used for deserialization purposes only. </summary>
         private struct MessageMetaData

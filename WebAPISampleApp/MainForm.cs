@@ -810,6 +810,9 @@ namespace WebAPISampleApp
       }
     }
 
-   
+        private void lblState_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
